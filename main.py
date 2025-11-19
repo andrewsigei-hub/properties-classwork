@@ -1,4 +1,4 @@
-ALL_COURSES = [
+ALL_COURSES = [ ## Constant DO NOT CHANGE
     "Data Science",
     "Software Engineering",
     "DevOPS",
@@ -28,7 +28,7 @@ class Student:
         Student.student_count += 1
         Student.all_students.append(self)
 
-    # Course property
+    # Course property/getter
     @property
     def course(self):
         return self._course
@@ -40,15 +40,15 @@ class Student:
         else:
             raise ValueError("The course listed is not offered yet.")
 
-    # Gender property
+    # Gender property/getter
     @property
     def gender(self):
-        return self._gender
+        return self._gender # Returns something hence getter
 
     @gender.setter
     def gender(self, gender):
         if gender in GENDER:
-            self._gender = gender
+            self._gender = gender # converts into and accesible variable
         else:
             raise ValueError("You must be either Male or Female")
 

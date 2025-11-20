@@ -13,6 +13,14 @@ ALL_COURSES = [ ## Constant DO NOT CHANGE
 GENDER = ["Female", "Male"]
 
 
+INSTRUCTORS = [
+    "Erick Mongare"
+    "Nelson Murithi"
+    "Albert Byron"
+    "Jerald Nyaga"
+]
+
+
 class Student:
     student_count = 0
     all_students = []
@@ -27,6 +35,18 @@ class Student:
         self.instructor = instructor
         Student.student_count += 1
         Student.all_students.append(self)
+
+
+    @property
+    def instructor(self):
+        return self._instructor
+    
+    @instructor.setter
+    def instructor(self, instructor):
+        if instructor in INSTRUCTORS:
+            self._instructor = instructor
+        else:
+            raise ValueError("Your instructor does not exist ")   
 
     # Course property/getter
     @property
